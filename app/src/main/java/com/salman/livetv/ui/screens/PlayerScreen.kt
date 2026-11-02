@@ -40,7 +40,6 @@ import com.salman.livetv.data.sampleChannels
 import com.salman.livetv.data.upNext
 import com.salman.livetv.ui.components.ChannelLogo
 import com.salman.livetv.ui.components.ChannelRowItem
-import com.salman.livetv.ui.components.LiveBadge
 import com.salman.livetv.ui.theme.TextSecondary
 
 @Composable
