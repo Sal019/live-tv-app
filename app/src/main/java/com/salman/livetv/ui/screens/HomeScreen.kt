@@ -26,6 +26,7 @@ import androidx.compose.runtime.Composable
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.draw.clip
+import androidx.compose.ui.graphics.Brush
 import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.unit.dp
 import com.salman.livetv.data.TvChannel
@@ -44,13 +45,17 @@ fun HomeScreen(onChannelClick: (TvChannel) -> Unit, onSearchClick: () -> Unit) {
             Icon(Icons.Default.Search, contentDescription = "Search")
         }
         Spacer(modifier = Modifier.height(16.dp))
-        // Featured LIVE banner
+        // Featured LIVE banner — premium gradient, dynamic per featured channel.
         Box(
             modifier = Modifier
                 .fillMaxWidth()
                 .height(180.dp)
                 .clip(RoundedCornerShape(20.dp))
-                .background(AccentViolet)
+                .background(
+                    Brush.verticalGradient(
+                        listOf(featured.color, AccentViolet, MaterialTheme.colorScheme.surface)
+                    )
+                )
                 .padding(16.dp)
         ) {
             Column {
