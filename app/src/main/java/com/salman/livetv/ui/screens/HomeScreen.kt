@@ -20,6 +20,7 @@ import androidx.compose.foundation.shape.RoundedCornerShape
 import androidx.compose.material.icons.Icons
 import androidx.compose.material.icons.filled.Search
 import androidx.compose.material3.Icon
+import androidx.compose.material3.IconButton
 import androidx.compose.material3.MaterialTheme
 import androidx.compose.material3.Text
 import androidx.compose.runtime.Composable
@@ -42,7 +43,9 @@ fun HomeScreen(onChannelClick: (TvChannel) -> Unit, onSearchClick: () -> Unit) {
     Column(modifier = Modifier.fillMaxSize().padding(16.dp)) {
         Row(verticalAlignment = Alignment.CenterVertically) {
             Text("Live TV", style = MaterialTheme.typography.headlineMedium, modifier = Modifier.weight(1f))
-            Icon(Icons.Default.Search, contentDescription = "Search")
+            IconButton(onClick = onSearchClick) {
+                Icon(Icons.Default.Search, contentDescription = "Search")
+            }
         }
         Spacer(modifier = Modifier.height(16.dp))
         // Featured LIVE banner — premium gradient, dynamic per featured channel.
