@@ -80,9 +80,9 @@ fun LiveTvNavGraph(navController: NavHostController = rememberNavController()) {
                 ChannelsScreen(onChannelClick = { channel -> navController.navigate("player/${channel.id}") })
             }
             composable(BottomTab.Favourites.route) {
-                // Favourites are empty until the heart action is wired to storage.
+                // Demo favourites for now — replaced by real saved channels later.
                 FavouritesScreen(
-                    favourites = emptyList(),
+                    favourites = sampleChannels.take(3),
                     onChannelClick = { channel -> navController.navigate("player/${channel.id}") }
                 )
             }
